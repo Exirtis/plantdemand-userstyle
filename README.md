@@ -1,1 +1,1 @@
-A UserCSS style for customizing the display of interface elements on the PlantDemand app.
+A UserCSS style (targeted to the Stylus extension) for the PlantDemand web application focused on customizing the display of interface elements in the Schedule (calendar) view, providing customizations for how properties are displayed.
