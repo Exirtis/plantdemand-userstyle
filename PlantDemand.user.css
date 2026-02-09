@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name        PlantDemand UI Tweaks — UserCSS (global + per-section controls)
 @namespace   https://example.com/chad
-@version     1.0.8
+@version     1.0.9
 @description Defaults with per-section overrides (fonts, sizes, colors) for the Schedule (calendar) on plantdemand.com
 @author      Chad M.
 @license     MIT
@@ -321,3 +321,4 @@ loadBgComputed = rgba(loadBgColor, loadBgAlpha)
       if loadUseColor == 1
 
         color loadColor
+
