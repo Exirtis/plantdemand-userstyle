@@ -56,8 +56,8 @@ Open Stylus → Manage → click the style → adjust the controls. The most com
   - `XUseColor + XColor`
   - (Order # adds an optional **bold** toggle)
 
-> [!TIP]
-> If something doesn’t seem to apply, try turning on the **`!important`** master switch.
+> [!IMPORTANT]
+> If something doesn’t seem to apply, confirm that the **`!important`** master switch is toggled to on—it's the last setting.
 
 &nbsp;
 
