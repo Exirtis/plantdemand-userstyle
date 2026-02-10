@@ -7,7 +7,8 @@ Designed for the **Schedule** view (per location/plant). Uses a “don’t break
 
 ---
 
-<p align="center"><a href="#quickInstall-Anchor">Quick Install</a> &nbsp; | &nbsp; <a href="#changes-Anchor">What it Changes</a> &nbsp; | &nbsp; <a href="#configuration-Anchor">Configuration</a> &nbsp; | &nbsp; <a href="#limitations-Anchor">Limitations</a> &nbsp; | &nbsp; <a href="#troubleshooting-Anchor">Troubleshooting</a> &nbsp; | &nbsp; <a href="#contributing-Anchor">Contributing</a> &nbsp; | &nbsp; <a href="#versioning-Anchor">Versioning</a> &nbsp; | &nbsp; <a href="#license-Anchor">License</a></p>
+<p align="center"><a href="#quickInstall-Anchor">Quick Install</a> &nbsp; | &nbsp; <a href="#changes-Anchor">What it Changes</a> &nbsp; | &nbsp; <a href="#configuration-Anchor">Configuration</a> &nbsp; | &nbsp; <a href="#limitations-Anchor">Limitations</a></p>
+<p align="center"><a href="#troubleshooting-Anchor">Troubleshooting</a> &nbsp; | &nbsp; <a href="#contributing-Anchor">Contributing</a> &nbsp; | &nbsp; <a href="#versioning-Anchor">Versioning</a> &nbsp; | &nbsp; <a href="#license-Anchor">License</a></p>
 
 ---
 &nbsp;
