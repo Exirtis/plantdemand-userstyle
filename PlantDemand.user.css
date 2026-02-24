@@ -1,11 +1,16 @@
 /* ==UserStyle==
 @name        PlantDemand UI Tweaks — UserCSS (global + per-section controls)
 @namespace   https://example.com/chad
-@version     1.0.8
-@description Global defaults with per-section overrides (fonts, sizes, colors) for plantdemand.com
+@version     1.0.9
+@description Defaults with per-section overrides (fonts, sizes, colors) for the Schedule (calendar) on plantdemand.com
 @author      Chad M.
 @license     MIT
 @preprocessor stylus
+
+@homepageURL  https://github.com/exirtis/plantdemand-userstyle
+@supportURL   https://github.com/exirtis/plantdemand-userstyle/issues
+@downloadURL  https://raw.githubusercontent.com/exirtis/plantdemand-userstyle/main/PlantDemand.user.css
+@updateURL    https://raw.githubusercontent.com/exirtis/plantdemand-userstyle/main/PlantDemand.user.css
 
 @var select   fontPreset         "🌐 GLOBAL font —► choose" { "System UI": "preset-system", "Monospace*": "preset-mono", "Inter": "preset-inter", "Segoe UI": "preset-segoe", "Roboto": "preset-roboto", "Arial": "preset-arial", "Open Sans": "preset-openSans", "Custom (use text field below)": "preset-custom" }
 @var text     fontCustom         "Custom GLOBAL font list (if ''Custom'' is chosen)" "'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif"
@@ -314,4 +319,5 @@ loadBgComputed = rgba(loadBgColor, loadBgAlpha)
       if loadUseBg == 1
         background-color loadBgComputed
       if loadUseColor == 1
+
         color loadColor
