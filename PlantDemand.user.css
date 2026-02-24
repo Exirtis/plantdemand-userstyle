@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name        PlantDemand UI Tweaks — UserCSS (global + per-section controls)
 @namespace   https://example.com/chad
-@version     1.0.9
+@version     1.1.0
 @description Defaults with per-section overrides (fonts, sizes, colors) for the Schedule (calendar) on plantdemand.com
 @author      Chad M.
 @license     MIT
@@ -12,93 +12,136 @@
 @downloadURL  https://raw.githubusercontent.com/exirtis/plantdemand-userstyle/main/PlantDemand.user.css
 @updateURL    https://raw.githubusercontent.com/exirtis/plantdemand-userstyle/main/PlantDemand.user.css
 
-@var select   fontPreset         "🌐 GLOBAL font —► choose" { "System UI": "preset-system", "Monospace*": "preset-mono", "Inter": "preset-inter", "Segoe UI": "preset-segoe", "Roboto": "preset-roboto", "Arial": "preset-arial", "Open Sans": "preset-openSans", "Custom (use text field below)": "preset-custom" }
-@var text     fontCustom         "Custom GLOBAL font list (if ''Custom'' is chosen)" "'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif"
 
-@var checkbox sectionSpacer01         " ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀" 0
+@var  checkbox  globalHeading         "🌐 ＧＬＯＢＡＬ　ＦＯＮＴ" 0
+@var  select    fontPreset            "𝑪𝒉𝒐𝒐𝒔𝒆 : ꜰᴏɴᴛ (default selection = Monospace)" { "System UI": "preset-system", "Monospace*": "preset-mono", "Inter": "preset-inter", "Segoe UI": "preset-segoe", "Roboto": "preset-roboto", "Arial": "preset-arial", "Open Sans": "preset-openSans", "Custom (use text field below)": "preset-custom" }
+@var  text      fontCustom            "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ᴄᴜꜱᴛᴏᴍ ɢʟᴏʙᴀʟ ꜰᴏɴᴛ ʟɪꜱᴛ (if ''Custom'' is chosen above)" "'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif"
 
-@var select   customerFontMode   "🏭 CUSTOMER: font source (Global, Override, or Custom)" { "use Global": "global", "use Override*": "preset", "use Custom": "custom" }
-@var select   customerFontPreset "Font preset for CUSTOMER  (when mode = ''Override'')" { "Open Sans*": "preset-openSans", "System UI": "preset-system", "Monospace": "preset-mono", "Inter": "preset-inter", "Segoe UI": "preset-segoe", "Roboto": "preset-roboto", "Arial": "preset-arial", "Custom (use text field below)": "preset-custom" }
-@var text     customerFontCustom "Custom CUSTOMER font (when mode = ''Custom'')" "'Open Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif"
-@var number   customerFontSize   "Font-size for CUSTOMER" [0.8125, 0, 3, 0.0001, "rem"]
-@var checkbox customerUseBg      "Enable custom CUSTOMER background (bg) color" 1
-@var color    customerBgColor    "CUSTOMER background (bg) Color" #fbfbdc
-@var number   customerBgAlpha    "CUSTOMER bg color Opacity (0..1)" [1, 0, 1, 0.01]
-@var checkbox customerUseColor   "Enable custom CUSTOMER text color" 0
-@var color    customerColor      "CUSTOMER text color" #2b2b2b
+@var checkbox documentationURL        "(for instructions / usage notes: https://github.com/Exirtis/plantdemand-userstyle)" 0
 
-@var checkbox sectionSpacer02         " ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔" 0
+@var checkbox sectionSpacer01   " ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀" 0
 
-@var select   productFontMode    "📦 PRODUCT: font source (Global, Override, or Custom)" { "use Global*": "global", "use Override": "preset", "use Custom": "custom" }
-@var select   productFontPreset  "Font preset for PRODUCT  (when mode = ''Override'')" { "Monospace*": "preset-mono", "System UI": "preset-system", "Inter": "preset-inter", "Segoe UI": "preset-segoe", "Roboto": "preset-roboto", "Arial": "preset-arial", "Open Sans": "preset-openSans", "Custom (use text field below)": "preset-custom" }
-@var text     productFontCustom  "Custom PRODUCT font (when mode = ''Custom'')" "ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace"
-@var number   productFontSize    "Font-size for PRODUCT" [0.75, 0, 3, 0.01, "rem"]
-@var checkbox productUseBg       "Enable custom PRODUCT background (bg) color" 0
-@var color    productBgColor     "PRODUCT background (bg) Color" #fbfbdc
-@var number   productBgAlpha     "PRODUCT bg color Opacity (0..1)" [1, 0, 1, 0.01]
-@var checkbox productUseColor    "Enable custom PRODUCT text color" 0
-@var color    productColor       "PRODUCT text color" #743400
+@var  checkbox  customerHeading       "🏭 ＨＥＡＤＩＮＧ　（Ｃｕｓｔｏｍｅｒ　ｏｒ　Ｍａｔｅｒｉａｌ）" 0
+@var  select    customerFontMode      "𝑪𝒉𝒐𝒐𝒔𝒆 : ꜰᴏɴᴛ ꜱᴏᴜʀᴄᴇ (Global, Override, or Custom)" { "use Global": "global", "use Override*": "preset", "use Custom": "custom" }
+@var  select    customerFontPreset    "𝑪𝒉𝒐𝒐𝒔𝒆 : ꜰᴏɴᴛ ᴘʀᴇꜱᴇᴛ (when mode = ''Override'')" { "Open Sans*": "preset-openSans", "System UI": "preset-system", "Monospace": "preset-mono", "Inter": "preset-inter", "Segoe UI": "preset-segoe", "Roboto": "preset-roboto", "Arial": "preset-arial", "Custom (use text field below)": "preset-custom" }
+@var  text      customerFontCustom    "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ᴄᴜꜱᴛᴏᴍ ꜰᴏɴᴛ (when mode = ''Custom'')" "'Open Sans', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif"
+@var  number    customerFontSize      "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ꜰᴏɴᴛ-ꜱɪᴢᴇ" [0.8125, 0, 3, 0.0001, "rem"]
+@var  checkbox  customerUseBg         "𝑻𝒐𝒈𝒈𝒍𝒆 : ᴄᴜꜱᴛᴏᴍ ʙᴀᴄᴋɢʀᴏᴜɴᴅ ᴄᴏʟᴏʀ" 1
+@var  color     customerBgColor       "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ᴄᴜꜱᴛᴏᴍ ʙᴀᴄᴋɢʀᴏᴜɴᴅ ᴄᴏʟᴏʀ" #fbfbdc
+@var  number    customerBgAlpha       "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ᴏᴘᴀᴄɪᴛʏ of background color (0..1)" [1, 0, 1, 0.01]
+@var  checkbox  customerUseColor      "𝑻𝒐𝒈𝒈𝒍𝒆 : ᴄᴜꜱᴛᴏᴍ ᴛᴇxᴛ ᴄᴏʟᴏʀ" 0
+@var  color     customerColor         "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ᴄᴜꜱᴛᴏᴍ ᴛᴇxᴛ ᴄᴏʟᴏʀ" #1b5b1b
+@var  checkbox  customerBold          "𝑻𝒐𝒈𝒈𝒍𝒆 : ʙᴏʟᴅ for font" 1
 
-@var checkbox sectionSpacer03         " ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔" 0
+@var checkbox sectionSpacer02   " ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔" 0
 
-@var select   orderFontMode      "🍽️ ORDER #: font source (Global, Override, or Custom)" { "use Global*": "global", "use Override": "preset", "use Custom": "custom" }
-@var select   orderFontPreset    "Font preset for ORDER Number  (when mode = ''Override'')" { "Monospace*": "preset-mono", "System UI": "preset-system", "Inter": "preset-inter", "Segoe UI": "preset-segoe", "Roboto": "preset-roboto", "Arial": "preset-arial", "Open Sans": "preset-openSans", "Custom (use text field below)": "preset-custom" }
-@var text     orderFontCustom    "Custom ORDER # font (when mode = ''Custom'')" "ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace"
-@var number   orderFontSize      "Font-size for ORDER" [0.875, 0, 3, 0.001, "rem"]
-@var checkbox orderUseBg         "Enable custom ORDER # background (bg) color" 0
-@var color    orderBgColor       "ORDER # background (bg) Color" #fbfbdc
-@var number   orderBgAlpha       "ORDER # bg color Opacity (0..1)" [1, 0, 1, 0.01]
-@var checkbox orderUseColor      "Enable custom ORDER # text color" 1
-@var color    orderColor         "ORDER # text color" #1a1ae6
-@var checkbox orderBold          "Toggle bold for ORDER #: bold" 1
+@var  checkbox  productHeading        "📦 ＮＯＮ－ＨＥＡＤＩＮＧ　（Ｍａｔｅｒｉａｌ　ｏｒ　Ｃｕｓｔｏｍｅｒ）" 0
+@var  checkbox  quickNote01           "(if 𝙲𝚞𝚜𝚝𝚘𝚖𝚎𝚛 is the heading, applies to 𝙼𝚊𝚝𝚎𝚛𝚒𝚊𝚕—𝘢𝘯𝘥 𝘷𝘪𝘤𝘦 𝘷𝘦𝘳𝘴𝘢)" 0
 
-@var checkbox sectionSpacer04         " ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔" 0
+@var  select    productFontMode       "𝑪𝒉𝒐𝒐𝒔𝒆 : ꜰᴏɴᴛ ꜱᴏᴜʀᴄᴇ (Global, Override, or Custom)" { "use Global*": "global", "use Override": "preset", "use Custom": "custom" }
+@var  select    productFontPreset     "𝑪𝒉𝒐𝒐𝒔𝒆 : ꜰᴏɴᴛ ᴘʀᴇꜱᴇᴛ (when mode = ''Override'')" { "Monospace": "preset-mono", "System UI*": "preset-system", "Inter": "preset-inter", "Segoe UI": "preset-segoe", "Roboto": "preset-roboto", "Arial": "preset-arial", "Open Sans": "preset-openSans", "Custom (use text field below)": "preset-custom" }
+@var  text      productFontCustom     "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ᴄᴜꜱᴛᴏᴍ ꜰᴏɴᴛ (when mode = ''Custom'')" "ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace"
+@var  number    productFontSize       "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ꜰᴏɴᴛ-ꜱɪᴢᴇ" [0.75, 0, 3, 0.01, "rem"]
+@var  checkbox  productUseBg          "𝑻𝒐𝒈𝒈𝒍𝒆 : ᴄᴜꜱᴛᴏᴍ ʙᴀᴄᴋɢʀᴏᴜɴᴅ ᴄᴏʟᴏʀ" 0
+@var  color     productBgColor        "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ᴄᴜꜱᴛᴏᴍ ʙᴀᴄᴋɢʀᴏᴜɴᴅ ᴄᴏʟᴏʀ" #fbfbdc
+@var  number    productBgAlpha        "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ᴏᴘᴀᴄɪᴛʏ of background color (0..1)" [1, 0, 1, 0.01]
+@var  checkbox  productUseColor       "𝑻𝒐𝒈𝒈𝒍𝒆 : ᴄᴜꜱᴛᴏᴍ ᴛᴇxᴛ ᴄᴏʟᴏʀ" 0
+@var  color     productColor          "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ᴄᴜꜱᴛᴏᴍ ᴛᴇxᴛ ᴄᴏʟᴏʀ" #743400
+@var  checkbox  productBold           "𝑻𝒐𝒈𝒈𝒍𝒆 : ʙᴏʟᴅ for font" 1
 
-@var select   poFontMode         "🔖 PO NUMBER: font source (Global, Override, or Custom)" { "use Global*": "global", "use Override": "preset", "use Custom": "custom" }
-@var select   poFontPreset       "Font preset for PO Number  (when mode = ''Override'')" { "Monospace*": "preset-mono", "System UI": "preset-system", "Inter": "preset-inter", "Segoe UI": "preset-segoe", "Roboto": "preset-roboto", "Arial": "preset-arial", "Open Sans": "preset-openSans", "Custom (use text field below)": "preset-custom" }
-@var text     poFontCustom       "Custom PO Number font (when mode = ''Custom'')" "ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace"
-@var number   poFontSize         "Font-size for PO NUMBER" [0.8125, 0, 3, 0.0001, "rem"]
-@var checkbox poUseBg            "Enable custom PO # background (bg) color" 0
-@var color    poBgColor          "PO # background (bg) Color" #fbfbdc
-@var number   poBgAlpha          "PO # bg color Opacity (0..1)" [1, 0, 1, 0.01]
-@var checkbox poUseColor         "Enable custom PO # text color" 1
-@var color    poColor            "PO # text color" #008f0c
+@var checkbox sectionSpacer03   " ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔" 0
 
-@var checkbox sectionSpacer05         " ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔" 0
+@var  checkbox  orderHeading          "🍽️ ＯＲＤＥＲ　ＮＵＭＢＥＲ" 0
+@var  select    orderFontMode         "𝑪𝒉𝒐𝒐𝒔𝒆 : ꜰᴏɴᴛ ꜱᴏᴜʀᴄᴇ (Global, Override, or Custom)" { "use Global*": "global", "use Override": "preset", "use Custom": "custom" }
+@var  select    orderFontPreset       "𝑪𝒉𝒐𝒐𝒔𝒆 : ꜰᴏɴᴛ ᴘʀᴇꜱᴇᴛ (when mode = ''Override'')" { "Monospace": "preset-mono", "System UI*": "preset-system", "Inter": "preset-inter", "Segoe UI": "preset-segoe", "Roboto": "preset-roboto", "Arial": "preset-arial", "Open Sans": "preset-openSans", "Custom (use text field below)": "preset-custom" }
+@var  text      orderFontCustom       "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ᴄᴜꜱᴛᴏᴍ ꜰᴏɴᴛ (when mode = ''Custom'')" "ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace"
+@var  number    orderFontSize         "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ꜰᴏɴᴛ-ꜱɪᴢᴇ" [0.875, 0, 3, 0.001, "rem"]
+@var  checkbox  orderUseBg            "𝑻𝒐𝒈𝒈𝒍𝒆 : ᴄᴜꜱᴛᴏᴍ ʙᴀᴄᴋɢʀᴏᴜɴᴅ ᴄᴏʟᴏʀ" 0
+@var  color     orderBgColor          "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ᴄᴜꜱᴛᴏᴍ ʙᴀᴄᴋɢʀᴏᴜɴᴅ ᴄᴏʟᴏʀ" #fbfbdc
+@var  number    orderBgAlpha          "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ᴏᴘᴀᴄɪᴛʏ of background color (0..1)" [1, 0, 1, 0.01]
+@var  checkbox  orderUseColor         "𝑻𝒐𝒈𝒈𝒍𝒆 : ᴄᴜꜱᴛᴏᴍ ᴛᴇxᴛ ᴄᴏʟᴏʀ" 1
+@var  color     orderColor            "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ᴄᴜꜱᴛᴏᴍ ᴛᴇxᴛ ᴄᴏʟᴏʀ" #1a1ae6
+@var  checkbox  orderBold             "𝑻𝒐𝒈𝒈𝒍𝒆 : ʙᴏʟᴅ for font" 1
 
-@var select   expireFontMode     "📅 EXPIRE Date: font source (Global, Override, or Custom)" { "use Global*": "global", "use Override": "preset", "use Custom": "custom" }
-@var select   expireFontPreset   "Font preset for EXPIRE Date  (when mode = ''Override'')" { "Monospace*": "preset-mono", "System UI": "preset-system", "Inter": "preset-inter", "Segoe UI": "preset-segoe", "Roboto": "preset-roboto", "Arial": "preset-arial", "Open Sans": "preset-openSans", "Custom (use text field below)": "preset-custom" }
-@var text     expireFontCustom   "Custom EXPIRE font (when mode = ''Custom'')" "ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace"
-@var number   expireFontSize     "Font-size for EXPIRE Date" [0.75, 0, 3, 0.01, "rem"]
-@var checkbox expireUseBg        "Enable custom EXPIRE Date background (bg) color" 0
-@var color    expireBgColor      "EXPIRE Date background (bg) Color" #fbfbdc
-@var number   expireBgAlpha      "EXPIRE Date bg color Opacity (0..1)" [1, 0, 1, 0.01]
-@var checkbox expireUseColor     "Enable custom EXPIRE Date text color" 1
-@var color    expireColor        "EXPIRE Date text color" #aa0000
+@var checkbox sectionSpacer04   " ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔" 0
 
-@var checkbox sectionSpacer06         " ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔" 0
+@var  checkbox  jobNameHeading        "🥾 JOB NAME" 0
+@var  select    jobNameFontMode       "𝑪𝒉𝒐𝒐𝒔𝒆 : ꜰᴏɴᴛ ꜱᴏᴜʀᴄᴇ (Global, Override, or Custom)" { "use Global": "global", "use Override*": "preset", "use Custom": "custom" }
+@var  select    jobNameFontPreset     "𝑪𝒉𝒐𝒐𝒔𝒆 : ꜰᴏɴᴛ ᴘʀᴇꜱᴇᴛ (when mode = ''Override'')" { "Monospace": "preset-mono", "System UI*": "preset-system", "Inter": "preset-inter", "Segoe UI": "preset-segoe", "Roboto": "preset-roboto", "Arial": "preset-arial", "Open Sans": "preset-openSans", "Custom (use text field below)": "preset-custom" }
+@var  text      jobNameFontCustom     "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ᴄᴜꜱᴛᴏᴍ ꜰᴏɴᴛ (when mode = ''Custom'')" "ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace"
+@var  number    jobNameFontSize       "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ꜰᴏɴᴛ-ꜱɪᴢᴇ" [0.75, 0, 3, 0.001, "rem"]
+@var  checkbox  jobNameUseBg          "𝑻𝒐𝒈𝒈𝒍𝒆 : ᴄᴜꜱᴛᴏᴍ ʙᴀᴄᴋɢʀᴏᴜɴᴅ ᴄᴏʟᴏʀ" 0
+@var  color     jobNameBgColor        "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ᴄᴜꜱᴛᴏᴍ ʙᴀᴄᴋɢʀᴏᴜɴᴅ ᴄᴏʟᴏʀ" #fbfbdc
+@var  number    jobNameBgAlpha        "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ᴏᴘᴀᴄɪᴛʏ of background color (0..1)" [1, 0, 1, 0.01]
+@var  checkbox  jobNameUseColor       "𝑻𝒐𝒈𝒈𝒍𝒆 : ᴄᴜꜱᴛᴏᴍ ᴛᴇxᴛ ᴄᴏʟᴏʀ" 0
+@var  color     jobNameColor          "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ᴄᴜꜱᴛᴏᴍ ᴛᴇxᴛ ᴄᴏʟᴏʀ" #808080
+@var  checkbox  jobNameBold           "𝑻𝒐𝒈𝒈𝒍𝒆 : ʙᴏʟᴅ for font" 0
 
-@var select   loadFontMode       "⏰ LOAD TIME: font source (Global, Override, or Custom)" { "use Global*": "global", "use Override with preset": "preset", "use Custom": "custom" }
-@var select   loadFontPreset     "Font preset for LOAD TIME  (when mode = ''Override'')" { "Monospace*": "preset-mono", "System UI": "preset-system", "Inter": "preset-inter", "Segoe UI": "preset-segoe", "Roboto": "preset-roboto", "Arial": "preset-arial", "Open Sans": "preset-openSans", "Custom (use text field below)": "preset-custom" }
-@var text     loadFontCustom     "Custom LOAD TIME font (when mode = ''Custom'')" "ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace"
-@var number   loadFontSize       "Font-size for LOAD TIME" [0.875, 0, 3, 0.001, "rem"]
-@var checkbox loadUseBg          "Enable custom LOAD TIME background (bg) color" 0
-@var color    loadBgColor        "LOAD TIME background (bg) Color" #fbfbdc
-@var number   loadBgAlpha        "LOAD TIME bg color Opacity (0..1)" [1, 0, 1, 0.01]
-@var checkbox loadUseColor       "Enable custom LOAD TIME text color" 0
-@var color    loadColor          "LOAD TIME text color" #3b0077
+@var checkbox sectionSpacer05   " ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔" 0
 
-@var checkbox sectionSpacer07         " ═════════════════════════" 0
+@var  checkbox  poNumberHeading       "🔖 ＰＯ　ＮＵＭＢＥＲ" 0
+@var  select    poNumberFontMode      "𝑪𝒉𝒐𝒐𝒔𝒆 : ꜰᴏɴᴛ ꜱᴏᴜʀᴄᴇ (Global, Override, or Custom)" { "use Global*": "global", "use Override": "preset", "use Custom": "custom" }
+@var  select    poNumberFontPreset    "𝑪𝒉𝒐𝒐𝒔𝒆 : ꜰᴏɴᴛ ᴘʀᴇꜱᴇᴛ (when mode = ''Override'')" { "Monospace": "preset-mono", "System UI*": "preset-system", "Inter": "preset-inter", "Segoe UI": "preset-segoe", "Roboto": "preset-roboto", "Arial": "preset-arial", "Open Sans": "preset-openSans", "Custom (use text field below)": "preset-custom" }
+@var  text      poNumberFontCustom    "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ᴄᴜꜱᴛᴏᴍ ꜰᴏɴᴛ (when mode = ''Custom'')" "ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace"
+@var  number    poNumberFontSize      "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ꜰᴏɴᴛ-ꜱɪᴢᴇ" [0.8125, 0, 3, 0.0001, "rem"]
+@var  checkbox  poNumberUseBg         "𝑻𝒐𝒈𝒈𝒍𝒆 : ᴄᴜꜱᴛᴏᴍ ʙᴀᴄᴋɢʀᴏᴜɴᴅ ᴄᴏʟᴏʀ" 0
+@var  color     poNumberBgColor       "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ᴄᴜꜱᴛᴏᴍ ʙᴀᴄᴋɢʀᴏᴜɴᴅ ᴄᴏʟᴏʀ" #fbfbdc
+@var  number    poNumberBgAlpha       "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ᴏᴘᴀᴄɪᴛʏ of background color (0..1)" [1, 0, 1, 0.01]
+@var  checkbox  poNumberUseColor      "𝑻𝒐𝒈𝒈𝒍𝒆 : ᴄᴜꜱᴛᴏᴍ ᴛᴇxᴛ ᴄᴏʟᴏʀ" 1
+@var  color     poNumberColor         "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ᴄᴜꜱᴛᴏᴍ ᴛᴇxᴛ ᴄᴏʟᴏʀ" #008f0c
+@var  checkbox  poNumberBold          "𝑻𝒐𝒈𝒈𝒍𝒆 : ʙᴏʟᴅ for font" 1
+
+@var checkbox sectionSpacer06   " ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔" 0
+
+@var  checkbox  jobNumberHeading      "🎫 ＪＯＢ　ＮＵＭＢＥＲ" 0
+@var  select    jobNumberFontMode     "𝑪𝒉𝒐𝒐𝒔𝒆 : ꜰᴏɴᴛ ꜱᴏᴜʀᴄᴇ (Global, Override, or Custom)" { "use Global*": "global", "use Override": "preset", "use Custom": "custom" }
+@var  select    jobNumberFontPreset   "𝑪𝒉𝒐𝒐𝒔𝒆 : ꜰᴏɴᴛ ᴘʀᴇꜱᴇᴛ (when mode = ''Override'')" { "Monospace": "preset-mono", "System UI*": "preset-system", "Inter": "preset-inter", "Segoe UI": "preset-segoe", "Roboto": "preset-roboto", "Arial": "preset-arial", "Open Sans": "preset-openSans", "Custom (use text field below)": "preset-custom" }
+@var  text      jobNumberFontCustom   "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ᴄᴜꜱᴛᴏᴍ ꜰᴏɴᴛ (when mode = ''Custom'')" "ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace"
+@var  number    jobNumberFontSize     "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ꜰᴏɴᴛ-ꜱɪᴢᴇ" [0.75, 0, 3, 0.001, "rem"]
+@var  checkbox  jobNumberUseBg        "𝑻𝒐𝒈𝒈𝒍𝒆 : ᴄᴜꜱᴛᴏᴍ ʙᴀᴄᴋɢʀᴏᴜɴᴅ ᴄᴏʟᴏʀ" 0
+@var  color     jobNumberBgColor      "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ᴄᴜꜱᴛᴏᴍ ʙᴀᴄᴋɢʀᴏᴜɴᴅ ᴄᴏʟᴏʀ" #fbfbdc
+@var  number    jobNumberBgAlpha      "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ᴏᴘᴀᴄɪᴛʏ of background color (0..1)" [1, 0, 1, 0.01]
+@var  checkbox  jobNumberUseColor     "𝑻𝒐𝒈𝒈𝒍𝒆 : ᴄᴜꜱᴛᴏᴍ ᴛᴇxᴛ ᴄᴏʟᴏʀ" 0
+@var  color     jobNumberColor        "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ᴄᴜꜱᴛᴏᴍ ᴛᴇxᴛ ᴄᴏʟᴏʀ" #808080
+@var  checkbox  jobNumberBold         "𝑻𝒐𝒈𝒈𝒍𝒆 : ʙᴏʟᴅ for font" 0
+
+@var checkbox sectionSpacer07   " ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔" 0
+
+@var  checkbox  expireHeading         "📅 ＥＸＰＩＲＥ　ＤＡＴＥ" 0
+@var  select    expireFontMode        "𝑪𝒉𝒐𝒐𝒔𝒆 : ꜰᴏɴᴛ ꜱᴏᴜʀᴄᴇ (Global, Override, or Custom)" { "use Global*": "global", "use Override": "preset", "use Custom": "custom" }
+@var  select    expireFontPreset      "𝑪𝒉𝒐𝒐𝒔𝒆 : ꜰᴏɴᴛ ᴘʀᴇꜱᴇᴛ (when mode = ''Override'')" { "Monospace": "preset-mono", "System UI*": "preset-system", "Inter": "preset-inter", "Segoe UI": "preset-segoe", "Roboto": "preset-roboto", "Arial": "preset-arial", "Open Sans": "preset-openSans", "Custom (use text field below)": "preset-custom" }
+@var  text      expireFontCustom      "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ᴄᴜꜱᴛᴏᴍ ꜰᴏɴᴛ (when mode = ''Custom'')" "ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace"
+@var  number    expireFontSize        "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ꜰᴏɴᴛ-ꜱɪᴢᴇ" [0.75, 0, 3, 0.01, "rem"]
+@var  checkbox  expireUseBg           "𝑻𝒐𝒈𝒈𝒍𝒆 : ᴄᴜꜱᴛᴏᴍ ʙᴀᴄᴋɢʀᴏᴜɴᴅ ᴄᴏʟᴏʀ" 0
+@var  color     expireBgColor         "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ᴄᴜꜱᴛᴏᴍ ʙᴀᴄᴋɢʀᴏᴜɴᴅ ᴄᴏʟᴏʀ" #fbfbdc
+@var  number    expireBgAlpha         "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ᴏᴘᴀᴄɪᴛʏ of background color (0..1)" [1, 0, 1, 0.01]
+@var  checkbox  expireUseColor        "𝑻𝒐𝒈𝒈𝒍𝒆 : ᴄᴜꜱᴛᴏᴍ ᴛᴇxᴛ ᴄᴏʟᴏʀ" 1
+@var  color     expireColor           "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ᴄᴜꜱᴛᴏᴍ ᴛᴇxᴛ ᴄᴏʟᴏʀ" #aa0000
+@var  checkbox  expireBold            "𝑻𝒐𝒈𝒈𝒍𝒆 : ʙᴏʟᴅ for font" 0
+
+@var checkbox sectionSpacer08   " ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔" 0
+
+@var  checkbox  loadHeading           "⏰ ＬＯＡＤ　ＴＩＭＥ" 0
+@var  select    loadFontMode          "𝑪𝒉𝒐𝒐𝒔𝒆 : ꜰᴏɴᴛ ꜱᴏᴜʀᴄᴇ (Global, Override, or Custom)" { "use Global*": "global", "use Override with preset": "preset", "use Custom": "custom" }
+@var  select    loadFontPreset        "𝑪𝒉𝒐𝒐𝒔𝒆 : ꜰᴏɴᴛ ᴘʀᴇꜱᴇᴛ (when mode = ''Override'')" { "Monospace": "preset-mono", "System UI*": "preset-system", "Inter": "preset-inter", "Segoe UI": "preset-segoe", "Roboto": "preset-roboto", "Arial": "preset-arial", "Open Sans": "preset-openSans", "Custom (use text field below)": "preset-custom" }
+@var  text      loadFontCustom        "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ᴄᴜꜱᴛᴏᴍ ꜰᴏɴᴛ (when mode = ''Custom'')" "ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace"
+@var  number    loadFontSize          "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ꜰᴏɴᴛ-ꜱɪᴢᴇ" [0.875, 0, 3, 0.001, "rem"]
+@var  checkbox  loadUseBg             "𝑻𝒐𝒈𝒈𝒍𝒆 : ᴄᴜꜱᴛᴏᴍ ʙᴀᴄᴋɢʀᴏᴜɴᴅ ᴄᴏʟᴏʀ" 0
+@var  color     loadBgColor           "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ᴄᴜꜱᴛᴏᴍ ʙᴀᴄᴋɢʀᴏᴜɴᴅ ᴄᴏʟᴏʀ" #fbfbdc
+@var  number    loadBgAlpha           "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ᴏᴘᴀᴄɪᴛʏ of background color (0..1)" [1, 0, 1, 0.01]
+@var  checkbox  loadUseColor          "𝑻𝒐𝒈𝒈𝒍𝒆 : ᴄᴜꜱᴛᴏᴍ ᴛᴇxᴛ ᴄᴏʟᴏʀ" 0
+@var  color     loadColor             "𝑺𝒆𝒕 / 𝑬𝒅𝒊𝒕 : ᴄᴜꜱᴛᴏᴍ ᴛᴇxᴛ ᴄᴏʟᴏʀ" #3b0077
+@var  checkbox  loadBold              "𝑻𝒐𝒈𝒈𝒍𝒆 : ʙᴏʟᴅ for font" 0
+
+@var checkbox sectionSpacer09   " ══════════════════════════════════════════════════" 0
 
 
-@var checkbox useImportant "Append !important to declarations" 1
 ==/UserStyle== */
 
 /* ──────────────────────────────────────────────────────────────────────────
    Implementation
    - Helpers compute font stacks and per-section overrides.
    - Pill background uses rgba(color, alpha) (no color-mix()).
-   - We branch on useImportant to add/remove !important cleanly.
    ────────────────────────────────────────────────────────────────────────── */
 
 /* ──────────────────────────────────────────────────────────────────────────
@@ -140,9 +183,17 @@ orderFontModeS       = '' + orderFontMode
 orderFontPresetS     = '' + orderFontPreset
 orderFontCustomS     = '' + orderFontCustom
 
-poFontModeS          = '' + poFontMode
-poFontPresetS        = '' + poFontPreset
-poFontCustomS        = '' + poFontCustom
+jobNameFontModeS       = '' + jobNameFontMode
+jobNameFontPresetS     = '' + jobNameFontPreset
+jobNameFontCustomS     = '' + jobNameFontCustom
+
+poNumberFontModeS          = '' + poNumberFontMode
+poNumberFontPresetS        = '' + poNumberFontPreset
+poNumberFontCustomS        = '' + poNumberFontCustom
+
+jobNumberFontModeS       = '' + jobNumberFontMode
+jobNumberFontPresetS     = '' + jobNumberFontPreset
+jobNumberFontCustomS     = '' + jobNumberFontCustom
 
 expireFontModeS      = '' + expireFontMode
 expireFontPresetS    = '' + expireFontPreset
@@ -168,156 +219,135 @@ resolveFont(modeS, presetS, customS)
 customerBgComputed = rgba(customerBgColor, customerBgAlpha)
 productBgComputed = rgba(productBgColor, productBgAlpha)
 orderBgComputed = rgba(orderBgColor, orderBgAlpha)
-poBgComputed = rgba(poBgColor, poBgAlpha)
+jobNameBgComputed = rgba(jobNameBgColor, jobNameBgAlpha)
+poNumberBgComputed = rgba(poNumberBgColor, poNumberBgAlpha)
+jobNumberBgComputed = rgba(jobNumberBgColor, jobNumberBgAlpha)
 expireBgComputed = rgba(expireBgColor, expireBgAlpha)
 loadBgComputed = rgba(loadBgColor, loadBgAlpha)
 
 /* Scope to plantdemand.com */
 @-moz-document domain("plantdemand.com")
 
-  /* ---------- Customer Titling / pill header ---------- */
+  /* ── Group header (Customer + Material) ───────────────────────────── */
   customerFont = resolveFont(customerFontModeS, customerFontPresetS, customerFontCustomS)
 
-  if useImportant == 1
-    div[data-testid="pill-customer"] div.pill__header__38Us8,
-    div[data-testid="pill-customer"] div.pill__header__38Us8 *
+  /* Ancestor scope for schedule only */      
+  [data-calendar-view]
+
+  /* Fonts on the header + descendants (scope under pill containers) */
+    [data-testid="pill-customer"] > [class^="pill__header__"],
+    [data-testid="pill-customer"] > [class^="pill__header__"] *,
+    [data-testid="pill-material"] > [class^="pill__header__"],
+    [data-testid="pill-material"] > [class^="pill__header__"] *
       font-family unquote(customerFont) !important
-    div[data-testid="pill-customer"] div.pill__header__38Us8
+      font-weight (customerBold == 1 ? bold : normal) !important
+        
+    [data-testid="pill-customer"] > [class^="pill__header__"],
+    [data-testid="pill-material"] > [class^="pill__header__"]
       font-size customerFontSize !important
       if customerUseBg == 1
         background-color customerBgComputed !important
       if customerUseColor == 1
         color customerColor !important
-  else
-    div[data-testid="pill-customer"] div.pill__header__38Us8,
-    div[data-testid="pill-customer"] div.pill__header__38Us8 *
-      font-family unquote(customerFont)
-    div[data-testid="pill-customer"] div.pill__header__38Us8
-      font-size customerFontSize
-      if customerUseBg == 1
-        background-color customerBgComputed
-      if customerUseColor == 1
-        color customerColor
-
-  /* ---------- Product header ---------- */
-  productFont = resolveFont(productFontModeS, productFontPresetS, productFontCustomS)
-
-  if useImportant == 1
-    div.order__header__RkIf1,
-    div.order__header__RkIf1 *
+  
+    /* ---------- Material / Customer (as a field, not a header) ---------- */
+    productFont = resolveFont(productFontModeS, productFontPresetS, productFontCustomS)
+  
+    [class^="order__header__"],
+    [class^="order__header__"] *
       font-family unquote(productFont) !important
-    div.order__header__RkIf1
+      font-weight (productBold == 1 ? bold : normal) !important
       font-size productFontSize !important
-      if productUseBg == 1
-        background-color productBgComputed !important
       if productUseColor == 1
         color productColor !important
-  else
-    div.order__header__RkIf1,
-    div.order__header__RkIf1 *
-      font-family unquote(productFont)
-    div.order__header__RkIf1
-      font-size productFontSize
+        
+    [class^="order__header__"]
       if productUseBg == 1
-        background-color productBgComputed
-      if productUseColor == 1
-        color productColor
-
-  /* ---------- Order # ---------- */
-  orderFont = resolveFont(orderFontModeS, orderFontPresetS, orderFontCustomS)
-
-  if useImportant == 1
-    .order__field__20xzI[data-field="Order Number"],
-    .order__field__20xzI[data-field="Order Number"] *
+        background-color productBgComputed !important
+  
+    /* ---------- Order # ---------- */
+    orderFont = resolveFont(orderFontModeS, orderFontPresetS, orderFontCustomS)
+  
+    [data-testid="custom-fields"] [class^="order__field__"][data-field="Order Number"],
+    [data-testid="custom-fields"] [class^="order__field__"][data-field="Order Number"] *
       font-family unquote(orderFont) !important
-    .order__field__20xzI[data-field="Order Number"]
-      font-size orderFontSize !important
       font-weight (orderBold == 1 ? bold : normal) !important
+        
+    [data-testid="custom-fields"] [class^="order__field__"][data-field="Order Number"]
+      font-size orderFontSize !important
       if orderUseBg == 1
         background-color orderBgComputed !important
       if orderUseColor == 1
         color orderColor !important
-  else
-    .order__field__20xzI[data-field="Order Number"],
-    .order__field__20xzI[data-field="Order Number"] *
-      font-family unquote(orderFont)
-    .order__field__20xzI[data-field="Order Number"]
-      font-size orderFontSize
-      font-weight (orderBold == 1 ? bold : normal)
-      if orderUseBg == 1
-        background-color orderBgComputed
-      if orderUseColor == 1
-        color orderColor
-
-  /* ---------- Purchase order # ---------- */
-  poFont = resolveFont(poFontModeS, poFontPresetS, poFontCustomS)
-
-  if useImportant == 1
-    .order__field__20xzI[data-field="Purchase order #"],
-    .order__field__20xzI[data-field="Purchase order #"] *
-      font-family unquote(poFont) !important
-    .order__field__20xzI[data-field="Purchase order #"]
-      font-size poFontSize !important
-      if poUseBg == 1
-        background-color poBgComputed !important
-      if poUseColor == 1
-        color poColor !important
-  else
-    .order__field__20xzI[data-field="Purchase order #"],
-    .order__field__20xzI[data-field="Purchase order #"] *
-      font-family unquote(poFont)
-    .order__field__20xzI[data-field="Purchase order #"]
-      font-size poFontSize
-      if poUseBg == 1
-        background-color poBgComputed
-      if poUseColor == 1
-        color poColor
-
-  /* ---------- Expire Date ---------- */
-  expireFont = resolveFont(expireFontModeS, expireFontPresetS, expireFontCustomS)
-
-  if useImportant == 1
-    .order__field__20xzI[data-field="Expire Date"],
-    .order__field__20xzI[data-field="Expire Date"] *
+  
+    /* ---------- Job Name ---------- */
+    jobNameFont = resolveFont(jobNameFontModeS, jobNameFontPresetS, jobNameFontCustomS)
+  
+    [data-testid="custom-fields"] [class^="order__field__"][data-field="Job Name"],
+    [data-testid="custom-fields"] [class^="order__field__"][data-field="Job Name"] *
+      font-family unquote(jobNameFont) !important
+      font-weight (jobNameBold == 1 ? bold : normal) !important
+        
+    [data-testid="custom-fields"] [class^="order__field__"][data-field="Job Name"]
+      font-size jobNameFontSize !important
+      if jobNameUseBg == 1
+        background-color jobNameBgComputed !important
+      if jobNameUseColor == 1
+        color jobNameColor !important
+  
+    /* ---------- Purchase order # ---------- */
+    poNumberFont = resolveFont(poNumberFontModeS, poNumberFontPresetS, poNumberFontCustomS)
+  
+    [data-testid="custom-fields"] [class^="order__field__"][data-field="Purchase order #"],
+    [data-testid="custom-fields"] [class^="order__field__"][data-field="Purchase order #"] *
+      font-family unquote(poNumberFont) !important
+      font-weight (poNumberBold == 1 ? bold : normal) !important
+        
+    [data-testid="custom-fields"] [class^="order__field__"][data-field="Purchase order #"]
+      font-size poNumberFontSize !important
+      if poNumberUseBg == 1
+        background-color poNumberBgComputed !important
+      if poNumberUseColor == 1
+        color poNumberColor !important
+  
+    /* ---------- Job Number ---------- */
+    jobNumberFont = resolveFont(jobNumberFontModeS, jobNumberFontPresetS, jobNumberFontCustomS)
+  
+    [data-testid="custom-fields"] [class^="order__field__"][data-field="Job Number"],
+    [data-testid="custom-fields"] [class^="order__field__"][data-field="Job Number"] *
+      font-family unquote(jobNumberFont) !important
+      font-weight (jobNumberBold == 1 ? bold : normal) !important
+        
+    [data-testid="custom-fields"] [class^="order__field__"][data-field="Job Number"]
+      font-size jobNumberFontSize !important
+      if jobNumberUseBg == 1
+        background-color jobNumberBgComputed !important
+      if jobNumberUseColor == 1
+        color jobNumberColor !important
+  
+    /* ---------- Expire Date ---------- */
+    expireFont = resolveFont(expireFontModeS, expireFontPresetS, expireFontCustomS)
+  
+    [data-testid="custom-fields"] [class^="order__field__"][data-field="Expire Date"],
+    [data-testid="custom-fields"] [class^="order__field__"][data-field="Expire Date"] *
       font-family unquote(expireFont) !important
-    .order__field__20xzI[data-field="Expire Date"]
+      font-weight (expireBold == 1 ? bold : normal) !important
+        
+    [class^="order__field__"][data-field="Expire Date"]
       font-size expireFontSize !important
       if expireUseBg == 1
         background-color expireBgComputed !important
       if expireUseColor == 1
         color expireColor !important
-  else
-    .order__field__20xzI[data-field="Expire Date"],
-    .order__field__20xzI[data-field="Expire Date"] *
-      font-family unquote(expireFont)
-    .order__field__20xzI[data-field="Expire Date"]
-      font-size expireFontSize
-      if expireUseBg == 1
-        background-color expireBgComputed
-      if expireUseColor == 1
-        color expireColor
-
-  /* ---------- Load Time (conditional element) ---------- */
-  loadFont = resolveFont(loadFontModeS, loadFontPresetS, loadFontCustomS)
-
-  if useImportant == 1
-    .order__loadTime__2N6BS,
-    .order__loadTime__2N6BS *
+  
+    /* ---------- Load Time (conditional element) ---------- */
+    loadFont = resolveFont(loadFontModeS, loadFontPresetS, loadFontCustomS)
+  
+    [data-testid$="-order"] [class^="order__loadTime__"]
       font-family unquote(loadFont) !important
-    .order__loadTime__2N6BS
+      font-weight (loadBold == 1 ? bold : normal) !important
       font-size loadFontSize !important
       if loadUseBg == 1
         background-color loadBgComputed !important
       if loadUseColor == 1
         color loadColor !important
-  else
-    .order__loadTime__2N6BS,
-    .order__loadTime__2N6BS *
-      font-family unquote(loadFont)
-    .order__loadTime__2N6BS
-      font-size loadFontSize
-      if loadUseBg == 1
-        background-color loadBgComputed
-      if loadUseColor == 1
-
-        color loadColor
